@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../../_app/immutable/entry/start.bMHnfz8B.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BiiDqdy2.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/DCKQQt4b.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BSf3ThJC.js" rel="modulepreload">
+		<link href="../../_app/immutable/entry/app.Di2EQw24.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BJfb2uvG.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BGHlEG8N.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/kJq_u9No.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/g1zP0OZC.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/0.Cz-mXvkp.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/cywQ5uy6.js" rel="modulepreload">
+		<link href="../../_app/immutable/nodes/6.q7vp370s.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/BcQogd32.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CycdjnHG.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CC5yAKLd.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/CO2rzQD6.js" rel="modulepreload">
+		<link href="../../_app/immutable/chunks/D17dFUF0.js" rel="modulepreload">
+		<!--e2jw2j--><!----><title>#4471 merged more than one cause · support kb</title>
+		<style>
+:root{--bg: #fbfaf7;--fg: #1d1d1b;--muted: #6b6a66;--line: #e3e0d8;--accent: #2f6f5e;--warn: #b4501f;--warn-bg: #fbeee6;--note-bg: #eef5f2;--mono: ui-monospace, "Cascadia Code", Menlo, monospace}@media(prefers-color-scheme:dark){:root{--bg: #171716;--fg: #ecebe6;--muted: #9c9a93;--line: #34332f;--accent: #6fbfa6;--warn: #f0905d;--warn-bg: #3a2418;--note-bg: #1d2c27}}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,sans-serif}.kb table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}.kb th,.kb td{border-bottom:1px solid var(--line);padding:.35rem .5rem;text-align:left}.kb code{font-family:var(--mono);font-size:.88em}.kb a{color:var(--accent)}.kb.svelte-e2jw2j{max-width:760px;margin:0 auto;padding:2rem 16px 4rem}.crumb.svelte-e2jw2j{font:.8rem var(--mono);text-decoration:none;color:var(--muted)}h1.svelte-e2jw2j{margin:.25rem 0 .5rem;line-height:1.2}.meta.svelte-e2jw2j{display:flex;flex-wrap:wrap;gap:.5rem 1rem;color:var(--muted);font-size:.85rem;margin:0}.status.svelte-e2jw2j{border:1px solid var(--line);border-radius:99px;padding:0 .6rem}.stale.svelte-e2jw2j{color:var(--warn);font-weight:600}.banner.svelte-e2jw2j{background:var(--warn-bg);color:var(--warn);padding:.6rem 1rem;border-radius:6px}footer.svelte-e2jw2j{margin-top:3rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line);padding-top:1rem}
+
+</style>
+		<style>
+aside.svelte-17bri61{border-left:4px solid var(--accent);padding:.5rem 1rem;margin:1rem 0;background:var(--note-bg)}aside.warn.svelte-17bri61{border-color:var(--warn);background:var(--warn-bg)}
+
+</style>
+		<style>
+.sum.svelte-12oyimm{font-size:1.1rem}.tags.svelte-12oyimm,.note.svelte-12oyimm{color:var(--muted);font-size:.85em}.wrong.svelte-12oyimm td:where(.svelte-12oyimm){background:var(--warn-bg)}.wrong.svelte-12oyimm td:where(.svelte-12oyimm):last-child{color:var(--warn);font-weight:600}
+
+</style>
+		<style>
+.stamp.svelte-1280m42{margin:2rem 0 0;font:.85rem var(--mono);color:var(--muted)}.stamp.svelte-1280m42 b:where(.svelte-1280m42){color:var(--accent);letter-spacing:.04em}.missing.svelte-1280m42{color:var(--warn)}
+
+</style>
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[0--><!--[--><!--[--><div class="kb svelte-e2jw2j"><header><a class="crumb svelte-e2jw2j" href="/kb">support desk · kb</a> <h1 class="svelte-e2jw2j">#4471 merged more than one cause</h1> <p class="meta svelte-e2jw2j"><span>owner <b>Areks5</b></span> <span class="status filed svelte-e2jw2j">filed</span> <span class="svelte-e2jw2j">reviewed 2026-10-31 · 0 days ago</span></p></header> <!--[-1--><!--]--> <main><p>#4471 was closed as one known issue: a month-first parser, one fix queued. The reports merged into it do not share one cause. The same subject line can be two bugs. Decision 0001 merges on the subject and never reads the body, so both landed here.</p> <p><code>parser</code>. The shared parser reads every date month first. A day-first tenant’s date comes out flipped. An April day leaves as a July day.</p> <p><code>hint</code>. booking-v3 prints a month-first hint under the date field. The person types what the hint says, and the form reads it the tenant’s way. That is a different bug, and it only arrives on the form channel. Intake’s tag is a guess from the browser. The cause is the tenant’s locale and form.</p> <aside class="warn svelte-17bri61"><!---->This ticket is not one fix. The largest cause is #4471. Every other row was merged into the wrong place and has no ticket of its own.<!----></aside><!----> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <p>Reports the desk read as a one-day move stay under the cause their tenant implies. The table footnotes them. They are not another problem.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-5W47-HMHP</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_5ijqzf = {
+						base: new URL("../..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.bMHnfz8B.js"),
+						import("../../_app/immutable/entry/app.Di2EQw24.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data: [null,null],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

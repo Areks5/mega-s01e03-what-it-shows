@@ -1,0 +1,30 @@
+---
+layout: runbook
+title: '#4471 merged more than one cause'
+owner: Areks5
+status: filed
+reviewed: 2026-10-31
+signature: Areks5
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+#4471 was closed as one known issue: a month-first parser, one fix queued. The reports merged into it do not share one cause. The same subject line can be two bugs. Decision 0001 merges on the subject and never reads the body, so both landed here.
+
+`parser`. The shared parser reads every date month first. A day-first tenant's date comes out flipped. An April day leaves as a July day.
+
+`hint`. booking-v3 prints a month-first hint under the date field. The person types what the hint says, and the form reads it the tenant's way. That is a different bug, and it only arrives on the form channel. Intake's tag is a guess from the browser. The cause is the tenant's locale and form.
+
+<Callout kind="warn">
+This ticket is not one fix. The largest cause is #4471. Every other row was merged into the wrong place and has no ticket of its own.
+</Callout>
+
+<CauseTable ticket={4471} />
+
+Reports the desk read as a one-day move stay under the cause their tenant implies. The table footnotes them. They are not another problem.
+
+<RenderStamp {signature} />
